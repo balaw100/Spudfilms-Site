@@ -85,6 +85,12 @@ section .inner { padding-block: 56px; }
   animation: drift 14s ease-in-out infinite alternate; }
 .vid .play { position: absolute; left: 14px; bottom: 14px; width: 46px; height: 46px; border-radius: 50%; background: var(--blue); display: grid; place-items: center; }
 .vid .play::after { content: ""; border-left: 14px solid #fff; border-top: 9px solid transparent; border-bottom: 9px solid transparent; margin-left: 4px; }
+.vid.yt { display: block; width: 100%; padding: 0; border: 0; cursor: pointer; background: #000 center / cover no-repeat; }
+.vid.yt::before { display: none; }
+.vid.yt::after { content: ""; position: absolute; inset: 0; background: linear-gradient(transparent 55%, #0006); transition: opacity 0.25s ease; }
+.vid.yt .play { z-index: 1; transition: transform 0.2s ease; }
+.vid.yt:hover .play { transform: scale(1.08); }
+.vid iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 @keyframes drift { to { transform: translate(8%, -6%) rotate(8deg); } }
 @media (prefers-reduced-motion: reduce) { .vid::before { animation: none; } }
 figure { margin: 0; min-width: 0; }
@@ -156,9 +162,9 @@ footer .inner { padding-block: 22px; border-top: 1px solid var(--rule); color: v
   <div class="head"><h2>Studio product videos</h2><span class="price">$500–$1,500</span></div>
   <p class="lede">Shot and edited by hand for Amazon listings and product pages.</p>
   <div class="three">
-    <figure><div class="vid"><div class="play"></div></div><div class="cap"><b>Penguin Bottle Opener</b><span>Kitchen · 30 sec</span></div></figure>
-    <figure><div class="vid"><div class="play"></div></div><div class="cap"><b>Battery Organizer</b><span>Storage · 30 sec</span></div></figure>
-    <figure><div class="vid"><div class="play"></div></div><div class="cap"><b>Training Soccer Balls</b><span>Sports · 30 sec</span></div></figure>
+    <figure><button class="vid yt" data-id="8vxT8TN2GxE" aria-label="Play Baby Mirror video"><div class="play"></div></button><div class="cap"><b>Baby Mirror</b><span>Baby</span></div></figure>
+    <figure><button class="vid yt" data-id="fIDcTJwRiOM" aria-label="Play Penguin Bottle Opener video"><div class="play"></div></button><div class="cap"><b>Penguin Bottle Opener</b><span>Kitchen</span></div></figure>
+    <figure><button class="vid yt" data-id="6RUi6i8W_wo" aria-label="Play Bar Set video"><div class="play"></div></button><div class="cap"><b>Bar Set</b><span>Home bar</span></div></figure>
   </div>
 </div></section>
 
@@ -199,6 +205,18 @@ footer .inner { padding-block: 22px; border-top: 1px solid var(--rule); color: v
 const bar = document.querySelector('.bar');
 new IntersectionObserver(([e]) => bar.classList.toggle('stuck', !e.isIntersecting && e.boundingClientRect.top < 1))
   .observe(document.getElementById('bar-mark'));
+// YouTube: show thumbnail first, load the player only on click (keeps the page fast).
+document.querySelectorAll('.vid.yt').forEach(v => {
+  v.style.backgroundImage = `url(https://i.ytimg.com/vi/${v.dataset.id}/hqdefault.jpg)`;
+  v.addEventListener('click', () => {
+    const f = document.createElement('iframe');
+    f.src = `https://www.youtube-nocookie.com/embed/${v.dataset.id}?autoplay=1&rel=0&modestbranding=1`;
+    f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen = true;
+    f.title = v.getAttribute('aria-label').replace('Play ', '');
+    const box = document.createElement('div'); box.className = 'vid'; box.appendChild(f);
+    v.replaceWith(box);
+  });
+});
 // Contact form → Web3Forms, which emails each message to Bruce.
 const WEB3FORMS_KEY = "9201ba80-9884-49dd-b01d-61dc9447c7e4";
 const form = document.getElementById('contact-form');
