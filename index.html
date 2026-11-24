@@ -20,7 +20,7 @@
 .wordrow { display: grid; grid-template-columns: 1fr 7fr 4fr; gap: 24px; }
 .wordrow .word { grid-column: 2 / 4; margin-left: -0.05em; }
 @media (max-width: 760px) { .wordrow { grid-template-columns: minmax(0, 1fr); } .wordrow .word { grid-column: 1; } }
-body { background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.55; overflow-x: hidden; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.55; overflow-x: hidden; }
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--blue); }
 .gut { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
 .inner { max-width: 1240px; margin: 0 auto; }
@@ -44,15 +44,24 @@ a { color: inherit; }
 /* headline sits off-center under the S, small note pinned far right */
 .hero .inner { display: grid; grid-template-columns: 1fr 7fr 4fr; gap: 24px; padding-block: 64px 56px; align-items: end; }
 .hero .lead { grid-column: 2; }
-.hero h1 { margin: 14px 0 0; font: 800 clamp(2.2rem, 5.4vw, 4.4rem)/0.98 var(--wide); font-stretch: 100%; letter-spacing: -0.03em; text-wrap: balance; }
+.hero h1 { margin: 14px 0 0; font: 800 clamp(2.05rem, 5vw, 4rem)/0.98 var(--wide); font-stretch: 100%; letter-spacing: -0.03em; text-wrap: balance; }
 .hero .lead p { margin: 14px 0 0; color: var(--soft); font-size: 1.1rem; }
 .hero .note { grid-column: 3; justify-self: end; text-align: right; font-size: 0.88rem; color: var(--soft); border-top: 2px solid var(--ink); padding-top: 10px; min-width: 0; }
 .hero .note b { display: block; color: var(--ink); font: 800 1.6rem/1 var(--wide); font-stretch: 110%; margin-bottom: 4px; font-variant-numeric: tabular-nums; }
 
-.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--blue); color: #fff; }
-.bar .inner { display: grid; grid-template-columns: 1.6fr repeat(4, auto) 1.2fr; align-items: stretch; }
-.bar .brand { font-size: clamp(1.3rem, 2.4vw, 1.9rem); align-self: center; padding-block: 22px; }
-.bar .cell { display: flex; flex-direction: column; justify-content: center; gap: 6px; padding: 18px 26px; border-left: 1px solid #ffffff40; min-width: 0; }
+/* Bar: film-strip sprocket edges top and bottom; brand stays hidden until the bar sticks, then slides in. */
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--blue); color: #fff; transition: box-shadow 0.3s ease; }
+.bar::before, .bar::after { content: ""; position: absolute; left: 0; right: 0; height: 7px; pointer-events: none;
+  background: var(--blue-deep) repeating-linear-gradient(90deg, transparent 0 14px, #F4EDDD2e 14px 24px) 0 50% / 100% 3px no-repeat; }
+.bar::before { top: 0; } .bar::after { bottom: 0; }
+.bar.stuck { box-shadow: 0 10px 24px -14px #1E1F1A99; }
+.bar .inner { position: relative; display: grid; grid-template-columns: auto repeat(4, auto) 1fr; align-items: stretch; padding-block: 7px; }
+.bar .brand { font-size: clamp(1.3rem, 2.4vw, 1.9rem); align-self: center; padding-block: 18px; overflow: hidden; max-width: 0; opacity: 0; transform: translateY(6px);
+  transition: max-width 0.45s ease, opacity 0.3s ease 0.1s, transform 0.3s ease 0.1s, padding 0.45s ease; }
+.bar.stuck .brand { max-width: 20rem; opacity: 1; transform: none; padding-right: 30px; }
+.bar .cell { display: flex; flex-direction: column; justify-content: center; gap: 6px; padding: 16px 26px; border-left: 1px solid #ffffff40; min-width: 0; transition: border-color 0.3s ease, padding 0.45s ease; }
+.bar:not(.stuck) .inner > .cell:nth-child(2) { border-left-color: transparent; padding-left: 0; }
+.bar .cell span i { font-style: normal; color: var(--tint); }
 .bar .cell small { font: 600 0.66rem/1 var(--body); letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.7; }
 .bar .cell small::before { content: "[ "; } .bar .cell small::after { content: " ]"; }
 .bar .cell span { font: 700 1.02rem/1.1 var(--wide); font-stretch: 105%; white-space: nowrap; font-variant-numeric: tabular-nums; }
@@ -61,8 +70,8 @@ a { color: inherit; }
 .bar .go i { font-style: normal; display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: #fff; color: var(--blue); font-size: 1.1rem; transition: transform 0.2s ease; }
 .bar .go:hover i { transform: translateX(4px); }
 @media (prefers-reduced-motion: reduce) { .bar .go i { transition: none; } }
-@media (max-width: 1000px) { .bar .inner { grid-template-columns: 1fr auto auto; } .bar .since, .bar .count, .bar .where { display: none; } }
-@media (max-width: 560px) { .bar .inner { grid-template-columns: 1fr auto; } .bar .phone { display: none; } .bar .brand { padding-block: 16px; } }
+@media (max-width: 1000px) { .bar .inner { grid-template-columns: auto auto 1fr; } .bar .since, .bar .count, .bar .where { display: none; } .bar:not(.stuck) .phone { border-left-color: transparent; padding-left: 0; } }
+@media (max-width: 560px) { .bar .inner { grid-template-columns: auto 1fr; } .bar .phone { display: none; } .bar .brand { padding-block: 14px; } .bar:not(.stuck) .go { border-left-color: transparent; } .bar .go { padding-block: 10px; } }
 
 section .inner { padding-block: 56px; }
 .head { display: flex; align-items: baseline; gap: 18px; flex-wrap: wrap; margin-top: 10px; }
@@ -130,12 +139,13 @@ footer .inner { padding-block: 22px; border-top: 1px solid var(--rule); color: v
   </div>
 </div></div>
 
+<div id="bar-mark" aria-hidden="true" style="height:1px;margin-bottom:-1px"></div>
 <div class="bar gut"><div class="inner">
   <span class="brand" aria-label="SpudFilms"><b>SPUD</b><span>FILMS</span></span>
   <div class="cell since"><small>Since</small><span>2019</span></div>
-  <div class="cell count"><small>Videos</small><span>200+</span></div>
+  <div class="cell count"><small>Videos</small><span>200<i>+</i></span></div>
   <div class="cell where"><small>Based in</small><span>Ventura County, CA</span></div>
-  <div class="cell phone"><span>(805) 665-3810</span></div>
+  <div class="cell phone"><small>Call</small><span>(805) 665-3810</span></div>
   <a class="go" href="#contact">Get a quote <i aria-hidden="true">→</i></a>
 </div></div>
 
@@ -182,6 +192,9 @@ footer .inner { padding-block: 22px; border-top: 1px solid var(--rule); color: v
 <footer class="gut"><div class="inner">© 2026 SpudFilms · Ventura County, California</div></footer>
 
 <script>
+const bar = document.querySelector('.bar');
+new IntersectionObserver(([e]) => bar.classList.toggle('stuck', !e.isIntersecting && e.boundingClientRect.top < 1))
+  .observe(document.getElementById('bar-mark'));
 document.getElementById('contact-form').addEventListener('submit', e => {
   e.preventDefault(); document.getElementById('sent').hidden = false;
 });
