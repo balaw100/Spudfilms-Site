@@ -114,6 +114,8 @@ textarea { min-height: 110px; resize: vertical; }
 .btn { align-self: flex-start; font: 700 0.95rem var(--body); color: #fff; background: var(--blue); border: 0; padding: 13px 22px; cursor: pointer; letter-spacing: 0.02em; }
 .btn:hover { background: var(--blue-deep); }
 .sent { margin: 0; color: var(--blue); font-weight: 600; }
+.fail { margin: 0; color: #9A3324; font-weight: 600; }
+.btn:disabled { opacity: 0.6; cursor: wait; }
 
 footer .inner { padding-block: 22px; border-top: 1px solid var(--rule); color: var(--soft); font-size: 0.82rem; }
 
@@ -185,8 +187,10 @@ footer .inner { padding-block: 22px; border-top: 1px solid var(--rule); color: v
     <label for="name">Name<input id="name" autocomplete="name" required></label>
     <label for="email">Email<input id="email" type="email" autocomplete="email" required></label>
     <label for="message">Your product or business<textarea id="message" required></textarea></label>
-    <button class="btn" type="submit">Send</button>
-    <p class="sent" id="sent" hidden>Thanks. We'll be in touch within a day.</p>
+    <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none">
+    <button class="btn" type="submit" id="send-btn">Send</button>
+    <p class="sent" id="sent" hidden role="status">Thanks. I'll be in touch within a day.</p>
+    <p class="fail" id="fail" hidden role="alert">That didn't go through. Please try again, or call (805) 665-3810.</p>
   </form>
 </div></section>
 <footer class="gut"><div class="inner">© 2026 SpudFilms · Ventura County, California</div></footer>
@@ -195,8 +199,26 @@ footer .inner { padding-block: 22px; border-top: 1px solid var(--rule); color: v
 const bar = document.querySelector('.bar');
 new IntersectionObserver(([e]) => bar.classList.toggle('stuck', !e.isIntersecting && e.boundingClientRect.top < 1))
   .observe(document.getElementById('bar-mark'));
-document.getElementById('contact-form').addEventListener('submit', e => {
-  e.preventDefault(); document.getElementById('sent').hidden = false;
+// Contact form → Web3Forms, which emails each message to Bruce.
+const WEB3FORMS_KEY = "9201ba80-9884-49dd-b01d-61dc9447c7e4";
+const form = document.getElementById('contact-form');
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  const btn = document.getElementById('send-btn'), sent = document.getElementById('sent'), fail = document.getElementById('fail');
+  sent.hidden = fail.hidden = true; btn.disabled = true; btn.textContent = 'Sending…';
+  const v = id => document.getElementById(id).value.trim();
+  try {
+    const r = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({ access_key: WEB3FORMS_KEY, subject: 'New SpudFilms inquiry from ' + v('name'),
+        from_name: 'SpudFilms website', name: v('name'), email: v('email'), message: v('message'),
+        botcheck: form.botcheck.checked })
+    });
+    const d = await r.json();
+    if (!d.success) throw new Error(d.message);
+    form.reset(); sent.hidden = false;
+  } catch (err) { fail.hidden = false; }
+  btn.disabled = false; btn.textContent = 'Send';
 });
 </script>
 
