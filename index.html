@@ -118,8 +118,9 @@ figure { margin: 0; min-width: 0; }
 .three figure:nth-child(3) { margin-top: 24px; }
 
 .ai .inner { display: grid; grid-template-columns: 4fr 8fr; gap: 32px; align-items: start; }
-.ai .inner.flow-wrap { display: flex; flex-direction: column; gap: 28px; }
-.flow { display: grid; grid-template-columns: 200px auto 200px; justify-content: center; gap: 48px; align-items: center; padding-block: 8px; }
+.ai .inner.flow-wrap { display: flex; flex-direction: column; align-items: stretch; gap: 28px; }
+.flow { display: grid; grid-template-columns: 230px auto 230px; justify-content: center; gap: 56px; align-items: end; padding-block: 8px; }
+.flow .arrow { align-self: center; margin-bottom: 48px; }
 .flow figure { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 14px; }
 .flow figcaption { display: flex; flex-direction: column; align-items: center; text-align: center; font-size: 0.92rem; }
 .flow figcaption b { font-weight: 600; } .flow figcaption span { color: var(--soft); }
