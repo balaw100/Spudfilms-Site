@@ -34,7 +34,7 @@ Lean: three things only (it's on screen ~3 seconds, text only, no narration):
 
 1. Hearth & Crumb logo (imprints the brand; nobody reads it)
 2. **French pastry, baked fresh since 1980.**
-3. The address
+3. **At your door in an hour.** (Replaces the address. Turns the craving into "I can have that right now." Anyone can drive to a bakery; delivery is the special offer. Only promise the hour for a real client if they can deliver it.)
 - The **bite sound carries over** the end card: one crisp crunch, not chewing.
 - Build it in Premiere: logo from the site image, color matched with the eyedropper, typed address. Every letter guaranteed.
 
