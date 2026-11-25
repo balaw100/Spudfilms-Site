@@ -254,8 +254,17 @@ footer .inner { padding-block: 22px; border-top: 1px solid var(--rule); color: v
 
 <script>
 const bar = document.querySelector('.bar');
-new IntersectionObserver(([e]) => bar.classList.toggle('stuck', !e.isIntersecting && e.boundingClientRect.top < 1))
-  .observe(document.getElementById('bar-mark'));
+// Mark the banner as stuck once it reaches its pinned spot (scroll-based: works the same on every browser).
+const mark = document.getElementById('bar-mark');
+let ticking = false;
+function checkStuck() {
+  ticking = false;
+  const pinTop = parseFloat(getComputedStyle(bar).top) || 0;
+  bar.classList.toggle('stuck', mark.getBoundingClientRect().top < pinTop);
+}
+addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(checkStuck); } }, { passive: true });
+addEventListener('resize', checkStuck);
+checkStuck();
 // YouTube: show thumbnail first, load the player only on click (keeps the page fast).
 document.querySelectorAll('.vid.yt').forEach(v => {
   v.style.backgroundImage = `url(https://i.ytimg.com/vi/${v.dataset.id}/hqdefault.jpg)`;
