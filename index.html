@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Inter:wght@400;500;600;700&display=swap">
 <style>
-/* Layout: poster site. Giant blue STOP., headline set off-center beneath it, sticky blue bar, staggered video row. Single light look by choice. */
+/* Layout: poster site. big headline leads, sticky blue bar, staggered video row. Single light look by choice. */
 :root {
   --paper: #F4EDDD; --ink: #1E1F1A; --soft: #625E53; --rule: #DED3BE;
   --blue: #2F5D3A; --blue-deep: #234629; --frame: #E8DFCC; --tint: #BBD7C0;
@@ -42,9 +42,10 @@ a { color: inherit; }
 .word { font: 900 clamp(4rem, 19vw, 14.5rem)/0.78 var(--wide); font-stretch: 125%; letter-spacing: -0.045em; color: var(--blue); margin: 0; padding-top: 8px; white-space: nowrap; }
 
 /* headline sits off-center under the S, small note pinned far right */
-.hero .inner { display: grid; grid-template-columns: 1fr 7fr 4fr; gap: 24px; padding-block: 64px 56px; align-items: end; }
-.hero .lead { grid-column: 2; }
-.hero h1 { margin: 14px 0 0; font: 800 clamp(2.05rem, 5vw, 4rem)/0.98 var(--wide); font-stretch: 100%; letter-spacing: -0.03em; text-wrap: balance; }
+.hero .inner { display: grid; grid-template-columns: minmax(0, 1fr); padding-block: 8px 48px; }
+.hero .lead { grid-column: 1; }
+.hero h1 { margin: 14px 0 0; font: 800 clamp(2.6rem, 7vw, 5.6rem)/0.96 var(--wide); font-stretch: 100%; letter-spacing: -0.03em; text-wrap: balance; }
+.hero .explore { display: inline-block; margin-top: 22px; font-weight: 700; color: var(--blue); text-decoration: none; border-bottom: 2px solid currentColor; padding-bottom: 2px; }
 .hero .lead p { margin: 14px 0 0; color: var(--soft); font-size: 1.1rem; }
 .hero .note { grid-column: 3; justify-self: end; text-align: right; font-size: 0.88rem; color: var(--soft); border-top: 2px solid var(--ink); padding-top: 10px; min-width: 0; }
 .hero .note b { display: block; color: var(--ink); font: 800 1.6rem/1 var(--wide); font-stretch: 110%; margin-bottom: 4px; font-variant-numeric: tabular-nums; }
@@ -138,12 +139,12 @@ footer .inner { padding-block: 22px; border-top: 1px solid var(--rule); color: v
 
 
 <div class="top gut"><div class="inner"><div class="logo" aria-label="SpudFilms"><b>SPUD</b><span>FILMS</span></div><a href="#contact">Contact</a></div></div>
-<div class="gut"><div class="inner wordrow"><p class="word" aria-hidden="true">STOP</p></div></div>
 
 <div class="hero gut"><div class="inner">
   <div class="lead">
     <h1 style="margin-top:0">Videos worth stopping for.</h1>
     <p>Studio and AI videos for your business.</p>
+    <a class="explore" href="#work">Explore our work ↓</a>
   </div>
 </div></div>
 
@@ -157,7 +158,7 @@ footer .inner { padding-block: 22px; border-top: 1px solid var(--rule); color: v
   <a class="go" href="#contact">Get a quote <i aria-hidden="true">→</i></a>
 </div></div>
 
-<section class="studio gut"><div class="inner">
+<section class="studio gut" id="work"><div class="inner">
   <div class="label">Studio work</div>
   <div class="head"><h2>Studio product videos</h2><span class="price">$500–$1,500</span></div>
   <p class="lede">Shot and edited by hand for Amazon listings and product pages.</p>
