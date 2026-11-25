@@ -30,14 +30,18 @@ Two shots plus an end card, about 15–20 seconds. The craving is the idea; the 
 
 ## End card
 
-- Hearth & Crumb logo, the address, and one small line: **We deliver too.** (Explains the box in her kitchen.)
+Lean: three things only (it's on screen ~3 seconds, text only, no narration):
+
+1. Hearth & Crumb logo (imprints the brand; nobody reads it)
+2. **French pastry, baked fresh since 1980.**
+3. The address
 - The **bite sound carries over** the end card: one crisp crunch, not chewing.
 - Build it in Premiere: logo from the site image, color matched with the eyedropper, typed address. Every letter guaranteed.
 
 ## Sound
 
 - From Veo: knife crack, pastry, room tone, tied to the action.
-- **Voiceover: "Okay, just this once."** Her inner voice talking herself into it (everyone says it, everyone knows it's a lie — that's the charm), landing on her pause just before the bite. Quiet and natural, talking to herself, not whispered; dry, no reverb. Then a beat of silence, the crunch, the logo. Don't say the bakery's name; the logo shows it.
+- **Voiceover: "Okay, but just one bite."** Her inner voice talking herself into it, landing on her pause just before the bite. It matches exactly what she's doing, and the cut to the crunch is the punchline: it won't be one bite. Delivered as a small sigh of giving in, with a hint of a smile in the voice; quiet, not whispered; dry, no reverb. Then a beat of silence, the crunch, the logo. Don't say the bakery's name; the logo shows it.
 - Voiceover from Google's AI voices (supports emotion/delivery direction). Music bed added separately in Premiere.
 
 ## Look
