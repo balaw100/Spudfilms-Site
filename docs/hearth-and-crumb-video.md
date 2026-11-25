@@ -37,7 +37,7 @@ Two shots plus an end card, about 15–20 seconds. The craving is the idea; the 
 ## Sound
 
 - From Veo: knife crack, pastry, room tone, tied to the action.
-- **Voiceover: "...just this once."** Her inner voice talking herself into it (everyone says it, everyone knows it's a lie — that's the charm), landing on her pause just before the bite. Airy and intimate, just above a whisper; dry, no reverb. Then a beat of silence, the crunch, the logo. Don't say the bakery's name; the logo shows it.
+- **Voiceover: "Okay, okay, just this once."** Her inner voice talking herself into it (everyone says it, everyone knows it's a lie — that's the charm), landing on her pause just before the bite. Quiet and natural, talking to herself, not whispered; dry, no reverb. Then a beat of silence, the crunch, the logo. Don't say the bakery's name; the logo shows it.
 - Voiceover from Google's AI voices (supports emotion/delivery direction). Music bed added separately in Premiere.
 
 ## Look
