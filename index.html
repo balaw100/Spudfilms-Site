@@ -65,7 +65,7 @@ a { color: inherit; }
 .bar:not(.stuck) .inner > .cell:nth-child(2) { border-left-color: transparent; padding-left: 0; }
 .bar .cell span i { font-style: normal; color: var(--tint); }
 .bar .cell small { font: 600 0.66rem/1 var(--body); letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.7; }
-.bar .cell small::before { content: "[ "; } .bar .cell small::after { content: " ]"; }
+
 .bar .cell span { font: 700 1.02rem/1.1 var(--wide); font-stretch: 105%; white-space: nowrap; font-variant-numeric: tabular-nums; }
 .bar .phone span { user-select: all; }
 .bar .go { display: flex; align-items: center; justify-content: flex-end; gap: 12px; padding-left: 26px; border-left: 1px solid #ffffff40; text-decoration: none; font: 800 clamp(1.05rem, 1.8vw, 1.35rem)/1 var(--wide); font-stretch: 110%; letter-spacing: -0.01em; }
@@ -155,7 +155,7 @@ footer .inner { padding-block: 22px; border-top: 1px solid var(--rule); color: v
   <div class="cell since"><span>Since 2019</span></div>
   <div class="cell count"><span>200<i>+</i> videos</span></div>
   <div class="cell where"><span>Ventura County, CA</span></div>
-  <div class="cell phone"><span>(805) 665-3810</span></div>
+  <div class="cell phone"><small>Call</small><span>(805) 665-3810</span></div>
   <a class="go" href="#contact">Get a quote <i aria-hidden="true">→</i></a>
 </div></div>
 
