@@ -74,12 +74,12 @@ a { color: inherit; }
 .bar .go:hover i { transform: translateX(4px); }
 @media (prefers-reduced-motion: reduce) { .bar .go i { transition: none; } }
 @media (max-width: 1000px) {
-  .bar .brand { display: none; }
-  .bar .inner { grid-template-columns: repeat(3, auto) 1fr; padding-block: 12px; }
+  .bar .inner { padding-block: 12px; }
   .bar .cell { border-left: 0; padding: 6px 22px 6px 0; }
   .bar .go { border-left: 0; padding-left: 0; }
 }
 @media (max-width: 560px) {
+  .bar .brand { display: none; }
   .bar .inner { grid-template-columns: auto auto minmax(0, 1fr); row-gap: 2px; }
   .bar .cell { padding-right: 18px; }
   .bar .cell span { font-size: 0.92rem; }
