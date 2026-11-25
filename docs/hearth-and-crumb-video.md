@@ -1,12 +1,64 @@
 # Hearth & Crumb — AI video concept
 
-Updated November 24, 2026.
+Updated November 25, 2026.
 
 ## Purpose and status
 
 A 15–20-second social ad for the fictional Hearth & Crumb bakery, demonstrating Spud Films' AI video work. Intended for Instagram/Facebook Reels, with the finished example also shown on the Spud Films website alongside its fictional source homepage.
 
-This is the current working concept. Exact wording, shot durations, camera choreography, and audio timing still need refinement.
+Two concepts are below. **Concept 2 (raspberry tart) is preferred.** Concept 1 is kept for reference.
+
+---
+
+# Concept 2: Raspberry tart (preferred)
+
+Two shots plus an end card, about 15–20 seconds. The craving is the idea; the craft is the hook. No box drop: it has to feel realistic, and a delicate pastry can't survive a crash.
+
+## Shot 1: the cut and pull-back
+
+- **Hook (first 1–2 seconds):** extreme close-up of a knife cracking through the crisp shell of a small individual raspberry tart. The crack is clearly audible.
+- Her hands slowly separate the two halves.
+- While she does, the camera pulls back to reveal the open white box beside her, logo clean and readable on the lid. The box held four tarts; one slot is now empty (the one she's working with).
+- About 4–5 seconds, one continuous shot.
+
+## Shot 2: the lift
+
+- New angle from her side. Put the camera on the same side as the hand holding the tart, so her arm doesn't block it.
+- She lifts one half toward her mouth with one hand, smiling.
+- A single slow bead of raspberry rolls over the cut edge. Shallow focus: the drip is sharp, her face soft behind it. Spell out "one slow drip" in the prompt, because AI overdoes liquids.
+- Cut just before the bite.
+
+## End card
+
+- Hearth & Crumb logo, the address, and one small line: **We deliver too.** (Explains the box in her kitchen.)
+- The **bite sound carries over** the end card: one crisp crunch, not chewing.
+- Build it in Premiere: logo from the site image, color matched with the eyedropper, typed address. Every letter guaranteed.
+
+## Sound
+
+- From Veo: knife crack, pastry, room tone, tied to the action.
+- No voiceover during the shots. Optional single line over the end card (e.g. "Baked this morning. On Main Avenue."). Don't say the bakery's name; the logo shows it.
+- Music bed and any voiceover added separately in Premiere (ElevenLabs for VO).
+
+## Look
+
+- Warm white kitchen (not stark white), cream counter, a touch of light wood, sparse background, soft morning window light from the left.
+- Small individual tarts so half fits easily in one hand.
+
+## Production
+
+1. Nano Banana reference images first: kitchen, tart, box (with the logo attached), actress. Reuse them for every frame.
+2. For each shot, make the start and end frames as stills in Nano Banana, then have Veo (in Flow) animate between them. Make the end frame from the start frame so pastry, light and counter match.
+3. Assemble in Premiere: two clips, end card, carried-over bite sound, music.
+
+## Ideas considered and dropped
+
+- Box falling from the sky: unrealistic, and would wreck the pastry.
+- A hand sneaking off with her other half: reads as "what was that?" in a 15-second ad.
+
+---
+
+# Concept 1: Box landing (earlier idea)
 
 ## Opening: the box landing
 
