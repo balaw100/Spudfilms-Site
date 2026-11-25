@@ -141,8 +141,8 @@ figure { margin: 0; min-width: 0; }
 @media (max-width: 760px) { .flow { grid-template-columns: minmax(0, 1fr); gap: 20px; justify-items: center; } .flow figure { grid-template-rows: auto auto; } .flow .arrow { margin-top: 0; } .arrow { justify-self: center; transform: rotate(90deg); }  }
 
 
-.about .inner { display: grid; grid-template-columns: 3fr 9fr; gap: 32px; border-top: 2px solid var(--ink); }
-.about p { margin: 0; font: 400 1.1rem/1.6 var(--body); max-width: 60ch; }
+.about .inner { border-top: 2px solid var(--ink); }
+.about .lede { max-width: 60ch; }
 
 .contact .inner { display: grid; grid-template-columns: 5fr 7fr; gap: 40px; border-top: 2px solid var(--ink); }
 .contact h2 { margin: 12px 0 10px; font: 800 clamp(1.6rem, 3.4vw, 2.4rem)/1.02 var(--wide); font-stretch: 105%; letter-spacing: -0.02em; }
@@ -225,8 +225,8 @@ footer .inner { padding-block: 22px; border-top: 1px solid var(--rule); color: v
 </div></section>
 
 <section class="about gut"><div class="inner" style="padding-top:32px">
-  <div class="label">About</div>
-  <p>I'm Bruce. Since 2019 I've made over 200 product videos for sellers around the world. Now I also make AI ads that stop the scroll.</p>
+  <div class="head"><h2>About SpudFilms</h2></div>
+  <p class="lede">I'm Bruce. Since 2019 I've made over 200 product videos for sellers around the world. Now I also make AI ads that stop the scroll.</p>
 </div></section>
 
 <section class="contact gut" id="contact"><div class="inner" style="padding-top:32px">
