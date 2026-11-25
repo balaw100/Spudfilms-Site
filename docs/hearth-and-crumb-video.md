@@ -6,26 +6,26 @@ Updated November 25, 2026.
 
 A 15–20-second social ad for the fictional Hearth & Crumb bakery, demonstrating Spud Films' AI video work. Intended for Instagram/Facebook Reels, with the finished example also shown on the Spud Films website alongside its fictional source homepage.
 
-Two concepts are below. **Concept 2 (raspberry tart) is preferred.** Concept 1 is kept for reference.
+Two concepts are below. **Concept 2 (raspberry cream puff) is preferred.** Concept 1 is kept for reference.
 
 ---
 
-# Concept 2: Raspberry tart (preferred)
+# Concept 2: Raspberry cream puff (preferred)
 
 Two shots plus an end card, about 15–20 seconds. The craving is the idea; the craft is the hook. No box drop: it has to feel realistic, and a delicate pastry can't survive a crash.
 
 ## Shot 1: the cut and pull-back
 
-- **Hook (first 1–2 seconds):** extreme close-up of a knife cracking through the crisp shell of a small individual raspberry tart. The crack is clearly audible.
+- **Hook (first 1–2 seconds):** extreme close-up of a knife cutting through a raspberry cream puff (crisp crackled choux shell, whipped vanilla cream, fresh raspberries, raspberry jam center). The crack of the shell is clearly audible.
 - Her hands slowly separate the two halves.
-- While she does, the camera pulls back to reveal the open white box beside her, logo clean and readable on the lid. The box held four tarts; one slot is now empty (the one she's working with).
+- While she does, the camera pulls back to reveal the open white box beside her, logo clean and readable on the lid. The box held four cream puffs; one slot is now empty (the one she's working with).
 - About 4–5 seconds, one continuous shot.
 
 ## Shot 2: the lift
 
 - New angle from her side. Put the camera on the same side as the hand holding the tart, so her arm doesn't block it.
-- She lifts one half toward her mouth with one hand, smiling.
-- A single slow bead of raspberry rolls over the cut edge. Shallow focus: the drip is sharp, her face soft behind it. Spell out "one slow drip" in the prompt, because AI overdoes liquids.
+- She lifts one half toward her mouth with one hand (it must be hand-held, no fork), smiling.
+- A single slow bead of raspberry jam rolls over the cut edge. Shallow focus: the drip is sharp, her face soft behind it. Spell out "one slow drip" in the prompt, because AI overdoes liquids.
 - Cut just before the bite.
 
 ## End card
@@ -37,17 +37,17 @@ Two shots plus an end card, about 15–20 seconds. The craving is the idea; the 
 ## Sound
 
 - From Veo: knife crack, pastry, room tone, tied to the action.
-- No voiceover during the shots. Optional single line over the end card (e.g. "Baked this morning. On Main Avenue."). Don't say the bakery's name; the logo shows it.
-- Music bed and any voiceover added separately in Premiere (ElevenLabs for VO).
+- **Voiceover: "...go ahead, you deserve it."** Her inner voice, landing on her pause just before the bite. Airy and intimate, just above a whisper; dry, no reverb. Then a beat of silence, the crunch, the logo. Don't say the bakery's name; the logo shows it.
+- Voiceover from Google's AI voices (supports emotion/delivery direction). Music bed added separately in Premiere.
 
 ## Look
 
 - Warm white kitchen (not stark white), cream counter, a touch of light wood, sparse background, soft morning window light from the left.
-- Small individual tarts so half fits easily in one hand.
+- Cream puffs about 3 inches across, so half fits easily in one hand.
 
 ## Production
 
-1. Nano Banana reference images first: kitchen, tart, box (with the logo attached), actress. Reuse them for every frame.
+1. Nano Banana reference images first: kitchen, cream puff (whole), cream puff (cut open, made from the whole one), box (with the logo attached), actress. Reuse them for every frame.
 2. For each shot, make the start and end frames as stills in Nano Banana, then have Veo (in Flow) animate between them. Make the end frame from the start frame so pastry, light and counter match.
 3. Assemble in Premiere: two clips, end card, carried-over bite sound, music.
 
@@ -55,6 +55,8 @@ Two shots plus an end card, about 15–20 seconds. The craving is the idea; the 
 
 - Box falling from the sky: unrealistic, and would wreck the pastry.
 - A hand sneaking off with her other half: reads as "what was that?" in a 15-second ad.
+- Raspberry tart: shows everything from the top, so the cut isn't a reveal.
+- Mirror-glazed entremet / mille-feuille: look great cut, but can't be held in one hand.
 
 ---
 
